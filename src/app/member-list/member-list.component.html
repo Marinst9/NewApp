@@ -1,0 +1,70 @@
+<!-- <div class="topnav" >
+ 
+  <a class="active user-disabled">List of User</a>
+  <div class="login-container">
+    <div class="dropdown"*ngIf="user$ | async as user">
+      <button class="dropbtn">Welcome {{  user.username }}
+        <i class="fa fa-caret-down"></i>
+      </button>
+      <div class="dropdown-content">
+        <a href="#">Edit</a>
+        <a href="#" (click)="logout()" type="button" routerLinkActive="active">LogOut</a>
+      </div>
+    </div>
+  </div>
+</div> -->
+<!-- treba da se trgne od tuka da odi vo navbar component -->
+
+<!-- <div  *ngIf="login; else  logout">
+
+<p
+  <a>List of Users</a>
+  <p class="form-control" >Welcome {{ (user$ | async)?.username }}</p>
+ 
+  </div>
+  <a class="btn btn-outline-success" href="#" (click)="logout()" type="button" routerLinkActive="active">LogOut</a>
+
+
+
+
+ -->
+ <!-- <nav class="navbar bg-body-tertiary">
+  <div *ngIf="login; else logout">
+    <form class="d-flex">
+      <p class="form-control ml-auto">denes</p>
+    </form>
+  </div>
+</nav> -->
+
+
+    <!-- <div *ngFor="let user of users">
+        <div class="card">
+          <div class="container">
+            <h4><b>{{ user.userName }}</b></h4>
+            <button (click)="showDetails(user)">Details</button>
+          </div>
+        </div>
+      </div> -->
+
+      <!-- <div   *ngFor="let user of users" class="card" style="width: 18rem; background-color:lightgreen ;  " >
+        <div class="card-body">
+          <h5 class="card-title">{{ user.userName }}</h5>
+          <h6 class="card-subtitle mb-2 text-muted"></h6>
+          <p class="card-text"></p>
+          <button (click)="showDetails(user)"  style="position: absolute; bottom: 0; left: 0; background-color: lightgrey;" >Details</button>
+
+        </div>
+      </div> -->
+  <div class="row">
+    
+    <div class="col-md-3 col-sm-12" *ngFor="let user of users">
+
+      <div class="card" >
+        <div class="card-body">
+          <h5 class="card-title">{{ user.userName }}</h5>
+          <!-- <p class="card-text">With supporting text below as a natural lead-in to additional content.</p> -->
+          <a [routerLink]="['/member-details', user.id]"   class="btn btn-success">Button</a>
+        </div>
+      </div>
+    </div>
+  </div>
